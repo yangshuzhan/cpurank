@@ -3,6 +3,7 @@ function setup() {
   createCanvas(400, 400);
   colorMode(HSB)
   stroke(80)
+  
 }
 for (let i = 0; i < cores; i++) {
   let newWorker = new Worker('cpuworker.js')
@@ -11,6 +12,7 @@ for (let i = 0; i < cores; i++) {
   }
   workerList.push(newWorker);
 }
+restart();
 function draw(){
   textSize(size)
   background(90);
@@ -35,4 +37,11 @@ function sumof(arr){
     sum+=arr[i];
   }
   return sum;
+}
+function restart(){
+  result=[]
+  console.log('restart!')
+  for (let i = 0; i < cores; i++) {
+  workerList[i].postMessage('restart')
+}
 }
