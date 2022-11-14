@@ -16,7 +16,7 @@ function draw(){
   background(90);
   //text('总时间:'+sumof(result)*0.001,10,30);
   fill(0)
-  text(cores+'核心'+' 相当于'+(300/sumof(result)*cores*cores/16).toFixed(5)+'个i3-9100f',10,2.5*size);
+  text(cores+'核心'+' 相当于'+(120/sumof(result)*cores*cores/16).toFixed(5)+'个iPhone 8',10,2.5*size);
   fill(100)
   rect(5, 3*size, 0.95*width,0.9*height);
   for(let i=0;i<result.length;i++){
@@ -24,9 +24,9 @@ function draw(){
     text('core'+i,10,5*size+2.5*size*i);
     //console.log(result[i])
     fill(150-result[i], 204, 255);
-    rect(4*size, 4*size+2.5*size*i, result[i],2*size);
+    rect(4.5*size, 4*size+2.5*size*i, result[i],2*size);
   }
-  if(4*size+2.5*size*cores>height)
+  if(4*size+2.5*size*cores>height-20)
     size*=0.99;
 }
 function sumof(arr){
