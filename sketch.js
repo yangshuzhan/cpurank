@@ -1,4 +1,6 @@
 let result=[],cores=navigator.hardwareConcurrency,workerList = [],size=12;
+if(!cores)
+  cores=4;
 function setup() {
   createCanvas(400, 400);
   colorMode(HSB)
