@@ -1,10 +1,8 @@
-let result,cores
+let result=[],cores=navigator.hardwareConcurrency,workerList = [],size=12;
 function setup() {
   createCanvas(400, 400);
-  cores=window.navigator.hardwareConcurrency;
-  console.log()
-  let workerList = [];
-result=[]
+  colorMode(HSB)
+}
 for (let i = 0; i < cores; i++) {
   let newWorker = new Worker('cpuworker.js')
   newWorker.onmessage = function(e) {
@@ -12,16 +10,21 @@ for (let i = 0; i < cores; i++) {
   }
   workerList.push(newWorker);
 }
-}
-
 function draw(){
+  textSize(size)
   background(220);
   //text('总时间:'+sumof(result)*0.001,10,30);
-  text('相当于'+300/sumof(result)*cores*cores/16+'个i3-9100f',10,30);
+  fill(0)
+  text(cores+'核心'+' 相当于'+(300/sumof(result)*cores*cores/16).toFixed(5)+'个i3-9100f',10,2.5*size);
   for(let i=0;i<result.length;i++){
-    text('core'+i,10,65+30*i);
-    rect(50, 50+30*i, result[i],20);
+    fill(0)
+    text('core'+i,10,5*size+2.5*size*i);
+    //console.log(result[i])
+    fill(150-result[i], 204, 255);
+    rect(4*size, 4*size+2.5*size*i, result[i],2*size);
   }
+  if(4*size+2.5*size*cores>height)
+    size*=0.99;
 }
 function sumof(arr){
   let sum=0;
