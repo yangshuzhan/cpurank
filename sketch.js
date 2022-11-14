@@ -16,16 +16,17 @@ for (let i = 0; i < cores; i++) {
 }
 restart();
 function draw(){
-  textSize(size)
+  textSize(size);
   background(90);
   //text('总时间:'+sumof(result)*0.001,10,30);
-  fill(0)
+  fill(0);
   text(cores+'核心'+' 相当于'+(46.7/sumof(result)*cores*cores/16).toFixed(5)+'个iPhone 8',10,2.5*size);
-  fill(100)
+  fill(100);
   rect(5, 3*size, 0.95*width,0.9*height);
   for(let i=0;i<result.length;i++){
     fill(0)
     text('core'+i,10,5*size+2.5*size*i);
+    text((result[i]*0.001).toFixed(3)+'s',5*size+result[i],5*size+2.5*size*i);
     //console.log(result[i])
     fill(150-result[i], 204, 255);
     rect(4.5*size, 4*size+2.5*size*i, result[i],2*size);
