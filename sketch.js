@@ -20,7 +20,7 @@ function draw(){
   background(90);
   //text('总时间:'+sumof(result)*0.001,10,30);
   fill(0)
-  text(cores+'核心'+' 相当于'+(33.75/sumof(result)*cores*cores/16).toFixed(5)+'个i3-9100f',10,2.5*size);
+  text(cores+'核心'+' 相当于'+(76.7/sumof(result)*cores*cores/16).toFixed(5)+'个i3-9100f',10,2.5*size);
   fill(100)
   rect(5, 3*size, 0.95*width,0.9*height);
   for(let i=0;i<result.length;i++){
