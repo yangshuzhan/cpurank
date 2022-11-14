@@ -2,6 +2,7 @@ let result=[],cores=navigator.hardwareConcurrency,workerList = [],size=12;
 function setup() {
   createCanvas(400, 400);
   colorMode(HSB)
+  stroke(80)
 }
 for (let i = 0; i < cores; i++) {
   let newWorker = new Worker('cpuworker.js')
@@ -12,10 +13,12 @@ for (let i = 0; i < cores; i++) {
 }
 function draw(){
   textSize(size)
-  background(220);
+  background(90);
   //text('总时间:'+sumof(result)*0.001,10,30);
   fill(0)
   text(cores+'核心'+' 相当于'+(300/sumof(result)*cores*cores/16).toFixed(5)+'个i3-9100f',10,2.5*size);
+  fill(100)
+  rect(5, 3*size, 0.95*width,0.9*height);
   for(let i=0;i<result.length;i++){
     fill(0)
     text('core'+i,10,5*size+2.5*size*i);
