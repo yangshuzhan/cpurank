@@ -5,7 +5,7 @@ function setup() {
   createCanvas(400, 400);
   colorMode(HSB)
   stroke(80)
-  
+  frameRate(10)
 }
 for (let i = 0; i < cores; i++) {
   let newWorker = new Worker('cpuworker.js')
