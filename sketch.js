@@ -26,7 +26,7 @@ function draw(){
   for(let i=0;i<result.length;i++){
     fill(0)
     text('core'+i,10,5*size+2.5*size*i);
-    text((result[i]*0.001).toFixed(3)+'s',5*size+result[i],5*size+2.5*size*i);
+    text((result[i]*0.01).toFixed(3)+'s',5*size+result[i],5*size+2.5*size*i);
     //console.log(result[i])
     fill(150-result[i], 204, 255);
     rect(4.5*size, 4*size+2.5*size*i, result[i],2*size);
