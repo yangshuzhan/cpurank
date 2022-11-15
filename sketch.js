@@ -10,7 +10,8 @@ function setup() {
 for (let i = 0; i < cores; i++) {
   let newWorker = new Worker('cpuworker.js')
   newWorker.onmessage = function(e) {
-    result.push(e.data);
+    console.log(e)
+    result.push(e.data.array);
   }
   workerList.push(newWorker);
 }
@@ -23,13 +24,19 @@ function draw(){
   text(cores+'核心'+' 相当于'+(46.7/sumof(result)*cores*cores/16).toFixed(5)+'个iPhone 8',10,2.5*size);
   fill(100);
   rect(5, 3*size, 0.95*width,0.9*height);
-  for(let i=0;i<result.length;i++){
+  for(let i=0;i<result.length;i++){//条形图
+    let a=result[i][0],b=result[i][1];
     fill(0)
     text('core'+i,10,5*size+2.5*size*i);
-    text((result[i]*0.01).toFixed(3)+'s',5*size+result[i],5*size+2.5*size*i);
+    text((a*0.01).toFixed(3)+'s',5*size+a,5*size+2.5*size*i);
+    text((b*0.01).toFixed(3)+'s',5*size+b,6*size+2.5*size*i);
     //console.log(result[i])
-    fill(150-result[i], 204, 255);
-    rect(4.5*size, 4*size+2.5*size*i, result[i],2*size);
+    fill(150-a, 204, 255);
+    rect(4.5*size, 4*size+2.5*size*i, a,1*size);
+
+    fill(150-b, 204, 255);
+    rect(4.5*size, 5*size+2.5*size*i, b,1*size);
+
   }
   if(4*size+2.5*size*cores>height-20)
     size*=0.99;
@@ -37,7 +44,7 @@ function draw(){
 function sumof(arr){
   let sum=0;
   for(let i=0;i<arr.length;i++){
-    sum+=arr[i];
+    sum+=arr[i][0];
   }
   return sum;
 }
