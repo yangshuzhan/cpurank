@@ -39,7 +39,7 @@ function draw(){
 
   }
   if(4*size+2.5*size*cores>height-20)
-    size*=0.99;
+    size*=0.9;
 }
 function sumof(arr){
   let sum=0;
