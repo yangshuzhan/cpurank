@@ -11,7 +11,7 @@ for (let i = 0; i < cores; i++) {
   let newWorker = new Worker('cpuworker.js')
   newWorker.onmessage = function(e) {
     console.log(e)
-    result.push(e.data.array);
+    result[i]=(e.data.array);
   }
   workerList.push(newWorker);
 }
