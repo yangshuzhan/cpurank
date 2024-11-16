@@ -3,16 +3,127 @@ html, body {
   padding: 0;
 }
 canvas {
-  display: block;
+  padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  z-index:0;
+}
+button{
+  display: flex;
+  align-items: center;
+  padding: 10;
+  position: absolute;
+  margin: auto;
+  justify-contect: center;
 }
 #button {
-  position: absolute;
-  top:7px;
-  left: 250px;
+  width:100px;
+    height: 40px;
+  top: -350px;
+    bottom: 0;
+    left: 250px;
+    right: 0;
   background-color: #4CAF50;
-  border: none;
+  border-color: #FFFFFF;
   font-size: 20px;
   color: #FFFFFF;
-  
   border-radius: 5px;
+  z-index:1;
+}
+#button:hover {
+  background-color: #555555E2;
+}
+#share {
+  width:90px;
+   height: 35px;
+  top: 0;
+    bottom: -370px;
+    left: 200px;
+    right: 0;
+  background-color: #57AF4E;
+  border-color: #FFFFFF;
+  font-size: 19px;
+  color: #FFFFFF;
+  border-radius: 5px; 
+}
+
+.label{
+  padding: 5px;
+  position: absolute;
+  display: block;
+  margin: auto;
+  width:110px;
+    height: 50px;
+  top: 0;
+    bottom: 0px;
+    left: 200px;
+    right: 0;
+  background-color: #BBBEBB54;
+  border-style: solid;
+  border-color: #A4A4A45B;
+  border-width:1px;
+  color: #FFFFFF;
+  border-radius: 5px; 
+}
+#label{
+  font-size: 15px;
+  z-index:1;
+}
+#label:hover {
+  background-color: #555555E2;
+}
+
+#canvas{
+  padding: 0;
+    margin: auto;
+    display: block;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  background-color: #E9EAE9;
+  border-style: dashed;
+  border-width: 1px;
+  border-color:black;
+  color:black;
+}
+#canvas2{
+  padding: 0;
+    margin: auto;
+    display: block;
+    width: 398px;
+    height: 350px;
+    position: absolute;
+  background-color: #FCFCFC;
+    top: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+body{
+  background: rgb(248,248,248);
+  background-image: radial-gradient(rgb(98,117,101) 1px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
+}
+#container-3407918bc7ada72e26013699abbdb309{
+  width:100%;
+  height:5%;
+  padding: 0;
+    margin: auto;
+    display: block;
+  position: absolute;
+  bottom: 0;
+}
+a:link { 
+  text-decoration: none; 
+} 
+a:hover {
+   background-color: #EEEF00;
 }
