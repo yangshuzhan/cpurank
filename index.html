@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J35CPRFM56"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J35CPRFM56');
-</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+    <title>rankcpu - text your device in browser</title>
+    <h1 style="color:#57AF4E">rankcpu.com</h1>
+    <meta name='description' content='Test your device in browser, and compare it to other phones and tablets'>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-
   </head>
-  <body>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.0/p5.min.js"></script>
+  <body id="body">
     <main>
+      <p style="position: relative;top:0;left:0;right:0;width:800px;margin-left: auto;margin-right: auto;font-size: 16px; ">This test measures the single-core performance of your device’s CPU. Single-core performance reflects how fast your processor can handle tasks when only one core is being utilized. While many modern processors have multiple cores, single-core speed is crucial for tasks that cannot take advantage of multiple cores.
+</p>
+      <div id="canvas" class="label">
+        <p style="padding:3px;margin-top:5px;">device equals to <a id="variable" style="color:black">10.0</a>×
+    <select name="options" id="options" style="width:80px" onchange="changeoption()">
+  <option value="1033">iphone8</option>
+</select></p>
+        <div id="canvas2" class="label"></div>
+    </div>
     </main>
-    <button id="button" onclick="restart()">重新测试</button>
-    <script src="sketch.js"></script>
-    
+    <button id="button" onclick="restart()">restart <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg></button>
+    <button id="share" onclick="share()">share<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M680-80q-50 0-85-35t-35-85q0-6 3-28L282-392q-16 15-37 23.5t-45 8.5q-50 0-85-35t-35-85q0-50 35-85t85-35q24 0 45 8.5t37 23.5l281-164q-2-7-2.5-13.5T560-760q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-24 0-45-8.5T598-672L317-508q2 7 2.5 13.5t.5 14.5q0 8-.5 14.5T317-452l281 164q16-15 37-23.5t45-8.5q50 0 85 35t35 85q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T720-200q0-17-11.5-28.5T680-240q-17 0-28.5 11.5T640-200q0 17 11.5 28.5T680-160ZM200-440q17 0 28.5-11.5T240-480q0-17-11.5-28.5T200-520q-17 0-28.5 11.5T160-480q0 17 11.5 28.5T200-440Zm480-280q17 0 28.5-11.5T720-760q0-17-11.5-28.5T680-800q-17 0-28.5 11.5T640-760q0 17 11.5 28.5T680-720Zm0 520ZM200-480Zm480-280Z"/></svg></button>
+    <div class="label" id="label"><a style="color:#48FF00"> ■</a><a> numbers test</a><br> 
+      <a style="color:#EEEF00"> ■</a><a> string test</a>
+    </div>
+    <script async src="sketch.js"></script>
+    <p style="position: fixed;top:0;right:0;font-size: 16px; 
+    color: #4CAF50;
+    margin-left: 15px;"><a href="https://browser.geekbench.com/ios-benchmarks">here</a> &nbsp;to see cpu rankings<br><a href="https://mistplay.onelink.me/ZGRQ/rtn0pths
+">make money by playing games!</a></p>
+    <p style="position: fixed;bottom:0;left: 50%;"><a style="color:black" href="mailto:1534596814@qq.com">Contact me</a></p>
+    <div id="charging">(charging state unknown)</div>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0ee017a0af17498db47a9c8048c1ae50"}'></script><!-- End Cloudflare Web Analytics -->
   </body>
 </html>
